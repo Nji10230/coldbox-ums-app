@@ -1,0 +1,8 @@
+{
+    "name":"UserManagementApp",
+    "web":{
+        "rewrites":{
+            "enable":true
+        }
+    }
+}
