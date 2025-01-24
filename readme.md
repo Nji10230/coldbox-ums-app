@@ -111,3 +111,110 @@ ColdBox is a professional open-source project and it is completely funded by the
 ### THE DAILY BREAD
 
  > "I am the way, and the truth, and the life; no one comes to the Father, but by me (JESUS)" Jn 14:1-12
+
+# UMS App
+
+## Description
+The UMS (User Management System) App is a simple application designed to manage user information. It provides APIs to create, read, update, and delete user data.
+
+## APIs
+
+### 1. Create User
+- **Endpoint**: `/api/users`
+- **Method**: POST
+- **Description**: Creates a new user.
+- **Request Body**:
+  ```json
+  {
+    "name": "string",
+    "email": "string",
+    "password": "string"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "id": "string",
+    "name": "string",
+    "email": "string"
+  }
+  ```
+
+### 2. Get User
+- **Endpoint**: `/api/users/{id}`
+- **Method**: GET
+- **Description**: Retrieves a user by ID.
+- **Response**:
+  ```json
+  {
+    "id": "string",
+    "name": "string",
+    "email": "string"
+  }
+  ```
+
+### 3. Update User
+- **Endpoint**: `/api/users/{id}`
+- **Method**: PUT
+- **Description**: Updates a user's information.
+- **Request Body**:
+  ```json
+  {
+    "name": "string",
+    "email": "string",
+    "password": "string"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "id": "string",
+    "name": "string",
+    "email": "string"
+  }
+  ```
+
+### 4. Delete User
+- **Endpoint**: `/api/users/{id}`
+- **Method**: DELETE
+- **Description**: Deletes a user by ID.
+- **Response**:
+  ```json
+  {
+    "message": "User deleted successfully"
+  }
+  ```
+
+## Configuration
+
+### Environment Variables
+The application requires the following environment variables to be set:
+
+- `DB_HOST`: The hostname of the database.
+- `DB_PORT`: The port number of the database.
+- `DB_USER`: The username for the database.
+- `DB_PASSWORD`: The password for the database.
+- `DB_NAME`: The name of the database.
+
+### Example `.env` file
+Create a `.env` file in the root directory of the project and add the following content:
+```
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=yourusername
+DB_PASSWORD=yourpassword
+DB_NAME=yourdatabase
+```
+
+### Running the Application
+1. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+2. Start the application:
+   ```sh
+   npm start
+   ```
+
+3. The application will be available at `http://localhost:3000`.
