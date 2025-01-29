@@ -43,10 +43,15 @@ component  table="users" persistent="true"{
 	/**
 	 * Constructor
 	 */
-	public User function init(){
+	 User function init(){
 		super.init( useQueryCaching="false" );
 		return this;
 	}
+
+	// Constructor
+    function init(){
+        return this;
+    }
 
 	/**
 	 * Verify if the model has been loaded from the database

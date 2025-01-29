@@ -34,14 +34,28 @@ component {
 
 		// @app_routes@
 
-		route( "/users" )
-			.rc( "formats", "json" )
-			.to( "Users.create" );
+		// route( "/users" )
+		// 	.rc( "formats", "json" )
+		// 	.to( "Users.create" );
 		//addRoute( pattern="/getuser", handler="Users", action="index",method="GET" );
+		
+		
+		route("/users/new").to("users.new");
+		route("/users/getAll").to("users.getNew");
+	  // route("users/all").to("users.all");
+	    route("/users/update/:userId").to("users.updateUser");
 
-	route( "/get/:id" )
-		.rc( "formats", "json" )
-		.to( "Users.index" );
+		//route("users/deleteThing").to("users.delete");
+
+		route("/users/delete/:userId").to("users.deleteUser");
+		
+	
+			route( "/get/:id" )
+			.rc( "formats", "json" )
+			.to( "Users.index" );
+
+		//route("/get-all-users").to("users.all");
+		
 
 		// Conventions-Based Routing
 		route( ":handler/:action?" ).end();
